@@ -1,0 +1,19 @@
+.cartImg {
+    height: 40px;
+    width: 40px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightskyblue;
+    position: fixed;
+    width: 100%;
+}
+
+.navLink > a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}

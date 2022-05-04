@@ -1,0 +1,16 @@
+.mainBody {
+    padding-top: 70px;
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+}
+
+.mainBody_wrapper{
+    margin: 0 auto;
+    width: 80%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 30px;
+}

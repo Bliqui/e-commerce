@@ -1,6 +1,7 @@
 import "./MainBody.css";
 import {ProductItem} from "../ProductItem/ProductItem";
 import {useSelector} from "react-redux";
+import {NavLink, useParams} from "react-router-dom";
 
 export const MainBody = () => {
 
@@ -10,7 +11,7 @@ export const MainBody = () => {
         <div className={'mainBody'}>
             <div className={'mainBody_wrapper'}>
                 {phones.map((phone) => {
-                    return <ProductItem name={phone.name} phoneImage={phone.phoneImage} price={phone.price}/>
+                    return <NavLink to={`product/${phone.id}`}><ProductItem name={phone.name} phoneImage={phone.phoneImage} price={phone.price}/></NavLink>
                 })}
             </div>
         </div>

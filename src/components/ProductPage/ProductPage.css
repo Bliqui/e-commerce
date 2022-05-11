@@ -1,0 +1,83 @@
+.productPageBody {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.92);
+    color: #1d1d1f;
+}
+.productPageWrapper {
+    padding-top: 70px;
+    margin: 0 auto;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+}
+.imageWrapper {
+    margin: 0 auto;
+}
+
+.phoneBigImage {
+    height: 531px;
+    width: 588px;
+}
+
+.aboutPhone {
+    text-align: center;
+    max-width: 30%;
+    margin: 0 auto;
+}
+.phoneName {
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+.phonePrice {
+    padding-top: 20px;
+    font-size: 30px;
+}
+
+.buyBtnWrapper {
+    width: 250px;
+    margin: 20px auto 0 auto;
+}
+
+.buyBtn {
+    width: 100%;
+    appearance: none;
+    background-color: #1d1d1f;
+    border: 2px solid #1d1d1f;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+
+.buyBtn:disabled {
+    pointer-events: none;
+}
+
+.buyBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+.buyBtn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}

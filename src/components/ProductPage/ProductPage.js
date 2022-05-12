@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useReducer, useState} from 'react';
 import {useParams} from "react-router-dom";
-import './ProductPage.css';
+import './ProductPage.scss';
 import {Loader} from "../Loader/Loader";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {NavLink} from "react-router-dom";
 
 export const ProductPage = () => {
@@ -11,13 +11,12 @@ export const ProductPage = () => {
     const phones = useSelector(state => state.phones)
     const [phone, setPhone] = useState();
     const [loader, setLoader] = useState(true)
+    const dispatch = useDispatch();
 
     function findId() {
         const curPhone = phones.filter((e) => {
-            console.log(typeof e.id, typeof phoneInfo.id)
             if (e.id === phoneInfo.id) {
 
-                /*console.log(phoneInfo)*/
                 return e
             }
         })
@@ -26,10 +25,16 @@ export const ProductPage = () => {
 
     useEffect(() => {
         setPhone(findId());
-        return(setLoader(false))
+        return(
+            setLoader(false)
+        )
     })
 
-    console.log(phone)
+
+    function addPhone () {
+        dispatch({type: 'ADD_CART_ITEM', value: phone})
+        dispatch({type: 'ADD_PHONE', value: phone.price})
+    }
 
     if (loader) {
         return <Loader/>
@@ -46,9 +51,11 @@ export const ProductPage = () => {
                     <div className={'phonePrice'}>${phone.price}</div>
                 </div>
                 <div className={'buyBtnWrapper'}>
-                    <NavLink to={'/shoppingCart'}><button className={'buyBtn'}>Buy now</button></NavLink>
+                    <NavLink to={'/shoppingCart'}><button onClick={addPhone} className={'buyBtn'}>Buy now</button></NavLink>
                 </div>
             </div>
         </div>
     );
 };
+
+// На нажатие кнопки юзаю редьюсер, по данным выше (юзПарамс и прочему) создаю элемент в корзине

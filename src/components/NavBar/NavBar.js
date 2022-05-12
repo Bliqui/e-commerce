@@ -1,7 +1,7 @@
-import cart from "../../Images/Shopping-Cart.png";
+import cart from "../../assets/images/Shopping-Cart.png";
 import './NavBar.css';
 import {Link} from "react-router-dom";
-import bananaLogo from '../../Images/banana-logo.png'
+import bananaLogo from '../../assets/images/banana-logo.png'
 import {NavLink} from "react-router-dom";
 
 export const NavBar = () => {

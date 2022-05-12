@@ -1,25 +1,19 @@
-import './ShoppingCart.css'
+import {useSelector} from "react-redux";
+import {CartItem} from "../CartItem/CartItem";
+import {EmptyCart} from "../EmptyCart/EmptyCart";
 
 export const ShoppingCart = () => {
 
+    const {finalPrice, phonesCount, cartItems} = useSelector(state => state);
+    console.log(typeof cartItems)
+    const [orderInfo] = cartItems;
+
+    if (cartItems.length === 0) {
+        return (
+            <EmptyCart/>
+        )
+    }
     return (
-        <div className={'shoppingCart-body'}>
-            <div className={'shoppingCart-wrapper'}>
-                <div className={'sumPurchase'}>
-                    <div className={'sumPurchase-total'}>Your bag total is $value</div>
-                    <div className={'buyBtnWrapper'}>
-                        <button className={'buyBtn'}>Check out</button>
-                    </div>
-                </div>
-                <div className={'sumPurchaseImg'}>
-                    <img src="" alt=""/>
-                </div>
-                <div className={'sumPurchaseInfo'}>
-                    <div className={'sumPurchaseName'}>Some Iphone</div>
-                    <div className={'sumPurchaseCount'}>1</div>
-                    <div className={'sumPurchasePrice'}>$3000</div>
-                </div>
-            </div>
-        </div>
+        <CartItem finalPrice={finalPrice} orderInfo={orderInfo} phonesCount={phonesCount} />
     )
 }

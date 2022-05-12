@@ -10,9 +10,16 @@ export const MainBody = () => {
     return (
         <div className={'mainBody'}>
             <div className={'mainBody_wrapper'}>
-                {phones.map((phone) => {
-                    return <NavLink to={`product/${phone.id}`}><ProductItem name={phone.name} phoneImage={phone.phoneImage} price={phone.price}/></NavLink>
-                })}
+                <div className={'mainBody_row'}>
+                    {phones.map((phone) => {
+                        return <NavLink key={phone.id} to={`product/${phone.id}`}>
+                            <ProductItem name={phone.name}
+                                         phoneImage={phone.phoneImage}
+                                         price={phone.price}
+                            />
+                        </NavLink>
+                    })}
+                </div>
             </div>
         </div>
     )

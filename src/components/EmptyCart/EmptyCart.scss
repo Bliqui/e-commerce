@@ -1,0 +1,19 @@
+@import "./src/assets/styles/index";
+
+.shoppingCart-body {
+  height: 100vh;
+
+  & .shoppingCart-wrapper__empty {
+    @include flex(center, column, center);
+    height: 100%;
+  }
+
+  & .shoppingCart-title {
+    @include boldTitleText;
+  }
+
+  & .shoppingCart-subtitle {
+    font-size: 20px;
+    color: #A0A0A0;
+  }
+}

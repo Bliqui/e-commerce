@@ -32,8 +32,8 @@ export const ProductPage = () => {
 
 
     function addPhone () {
+        dispatch({type: 'ADD_PHONE', value: {price: phone.price, phoneId: phone.id}})
         dispatch({type: 'ADD_CART_ITEM', value: phone})
-        dispatch({type: 'ADD_PHONE', value: phone.price})
     }
 
     if (loader) {

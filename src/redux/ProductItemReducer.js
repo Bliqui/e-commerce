@@ -8,54 +8,53 @@ const initialState = {
           id: '1',
           name: 'iPhone 12 mini',
           price: 2000,
-          isAvailable: true,
           phoneImage: iphone12mini,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
       {
           id: '2',
           name: 'iPhone 13',
           price: 3000,
-          isAvailable: false,
           phoneImage: iphone13pro,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
       {
           id: '3',
           name: 'iPhone SE',
           price: 1000,
-          isAvailable: false,
           phoneImage: iphoneSe,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
       {
           id: '4',
           name: 'iPhone 14',
           price: 3000,
-          isAvailable: false,
           phoneImage: iphone13pro,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
       {
           id: '5',
           name: 'iPhone 12 mini',
-          price: 3000,
-          isAvailable: false,
+          price: 2000,
           phoneImage: iphone12mini,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
       {
           id: '6',
           name: 'iPhone 16',
           price: 3000,
-          isAvailable: false,
           phoneImage: iphone13pro,
+          count: 0,
           description: 'Triple-lens cameras with new ultra wide-angle lens More durable, water resistant body Matte finish and new dark green color Night Mode for better low-light images Haptic Touch instead of 3D TouchUltra Wideband support A13 chip Faster WiFi and LTE.'
       },
   ],
     finalPrice: 0,
-    phonesCount: 0,
-    cartItems: []
+    cartItems: [],
 };
 
 const GET_PHONES = 'GET_PHONES';
@@ -65,9 +64,14 @@ export const ProductItemReducer = (state = initialState, action) => {
         case GET_PHONES:
             return state
         case 'ADD_PHONE':
-            return {...state, phonesCount: state.phonesCount + 1, finalPrice: state.finalPrice + action.value}
+            return {...state,
+                finalPrice: state.finalPrice + action.value.price,
+                phones: [...state.phones.map((e) => e.id === action.value.phoneId ? {...e, count: e.count + 1} : e)]}
+                /* 6 объектов, массив с 6 объектами */
         case 'REMOVE_PHONE':
-            return {...state, phonesCount: state.phonesCount - 1, finalPrice: state.finalPrice - action.value}
+            return {...state,
+                finalPrice: state.finalPrice - action.value.price,
+                phones: [...state.phones.map((e) => e.id === action.value.phoneId ? {...e, count: e.count - 1} : e)]}
         case 'ADD_CART_ITEM':
             return {...state, cartItems: [...state.cartItems, action.value] }
         default:

@@ -1,13 +1,11 @@
 .cartImg {
     max-height: 50px;
-    width: 40px;
 }
 
 .cartImgWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 5px;
 }
 
 .nav {

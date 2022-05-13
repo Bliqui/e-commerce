@@ -1,35 +1,32 @@
 @import "./src/assets/styles/index";
 
-.shoppingCart-body {
-  & .shoppingCart-wrapper {
-    padding-top: $bodyPadding;
-    width: 1200px;
-    margin: 0 auto;
-    height: 100%;
-    & .sumPurchase {
-      @include flex(center, column, center);
-      & .sumPurchase-total {
-        margin-top: 30px;
-        font-size: 35px;
-        font-weight: 600;
-        text-align: center;
-
-        margin-bottom: 20px;
-        & .buyBtnWrapper {
-          @include buyBtn
-        }
-      }
+.sumPurchaseBody {
+  width: 100%;
+  @include flex(center, column, center);
+  .sumPurchaseWrapper {
+    @include flex(space-between, row, center);
+    border-bottom: 1px solid #1d1d1f;
+    width: 45%;
+    margin-top: 40px;
+    & .sumPurchaseImg {
+      height: 100px;
+      width: 100px;
     }
-    .sumPurchaseImg {
-      display: flex;
-      flex-direction: column;
-    }
-    .sumPurchaseInfo {
-      display: flex;
-      margin-top: 40px;
+    & .sumPurchaseInfo {
+      @include flex(flex-end, row, center);
       font-family: "SF Pro Display", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 24px;
       font-weight: 600;
+      & .sumPurchaseName {
+        padding-right: 40px;
+      }
+      & .sumPurchaseCount {
+        padding: 0 5px 0 5px;
+      }
+      & .sumPurchasePrice {
+        padding-left: 10px;
+      }
     }
   }
 }
+

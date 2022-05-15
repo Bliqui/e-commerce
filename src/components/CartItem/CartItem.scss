@@ -20,6 +20,15 @@
       & .sumPurchaseName {
         padding-right: 40px;
       }
+      & .sumPurchaseBtn {
+        background-color: #1d1d1f;
+        color: #ffffff;
+        border-radius: 50%;
+        height: 27px;
+        width: 27px;
+        cursor: pointer;
+        text-align: center;
+      }
       & .sumPurchaseCount {
         padding: 0 5px 0 5px;
       }

@@ -1,5 +1,5 @@
 import loader from '../../assets/images/loader.gif'
-import './Loader.css'
+import './Loader.scss'
 
 export const Loader = () => {
     return (

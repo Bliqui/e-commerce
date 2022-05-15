@@ -1,5 +1,5 @@
 import bag from "../../assets/images/shopping-bag-icon.png"
-import './NavBar.css';
+import './NavBar.scss';
 import bananaLogo from '../../assets/images/banana-logo.png'
 import {NavLink} from "react-router-dom";
 

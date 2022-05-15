@@ -1,4 +1,4 @@
-import "./MainBody.css";
+import "./MainBody.scss";
 import {ProductItem} from "../ProductItem/ProductItem";
 import {useSelector} from "react-redux";
 import {NavLink, useParams} from "react-router-dom";

@@ -32,9 +32,9 @@ export const CartItem = ({phone}) => {
                 </div>
                 <div className={'sumPurchaseInfo'}>
                     <div className={'sumPurchaseName'}>{phone.name}</div>
-                    <button disabled={disabled} onClick={removeItem}>-1</button>
+                    <button className={'sumPurchaseBtn'} disabled={disabled} onClick={removeItem}>-1</button>
                     <div className={'sumPurchaseCount'}>{phone.count}</div>
-                    <button disabled={disabled} onClick={addItem}>+1</button>
+                    <button className={'sumPurchaseBtn'} disabled={disabled} onClick={addItem}>+1</button>
                     <div className={'sumPurchasePrice'}>${phone.price}</div>
                 </div>
             </div>

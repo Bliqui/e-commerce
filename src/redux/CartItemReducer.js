@@ -9,7 +9,10 @@ const initialState = {
 export const CartItemReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CREATE_CART_ITEM':
-            return {...state, cartItems: state.cartItems.length === 0 ? [...state.cartItems, action.value] : ifInCartAdd(state.cartItems, action.value)}
+            return {
+                ...state,
+                cartItems: state.cartItems.length === 0 ? [...state.cartItems, action.value] : ifInCartAdd(state.cartItems, action.value)
+            }
         case 'ADD_CART_ITEM':
             return {...state, cartItems: ifInCartAdd(state.cartItems, action.value)}
         case 'REMOVE_CART_ITEM':

@@ -2,7 +2,7 @@ import {combineReducers, createStore} from "redux";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import {ProductItemReducer} from "./ProductItemReducer";
-import {CartItemReducer} from "./CartItemReducer"
+import {CartItemReducer} from "./CartItemReducer";
 
 const rootReducerMain = combineReducers({
     product: ProductItemReducer,

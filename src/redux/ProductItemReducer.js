@@ -1,6 +1,6 @@
 import iphone12mini from '../assets/images/iPhone-12-mini.png';
 import iphoneSe from '../assets/images/iPhone-se.png';
-import iphone13pro from '../assets/images/iPhone-13-pro.png'
+import iphone13pro from '../assets/images/iPhone-13-pro.png';
 
 const initialState = {
   phones: [
@@ -61,10 +61,6 @@ export const ProductItemReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_PHONES:
             return state
-        case 'REMOVE_PHONE':
-            return {...state,
-                finalPrice: state.finalPrice - action.value.price,
-                phones: [...state.phones.map((e) => e.id === action.value.phoneId ? {...e, count: e.count - 1} : e)]}
         default:
             return state;
     }

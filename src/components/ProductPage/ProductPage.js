@@ -8,7 +8,8 @@ import {NavLink} from "react-router-dom";
 export const ProductPage = () => {
 
     const phoneInfo = useParams()
-    const phones = useSelector(state => state.phones)
+    const phones = useSelector(state => state.product.phones);
+    const cartInfo = useSelector(state => state.cart.cartItems)
     const [phone, setPhone] = useState();
     const [loader, setLoader] = useState(true)
     const dispatch = useDispatch();
@@ -28,12 +29,17 @@ export const ProductPage = () => {
         return(
             setLoader(false)
         )
-    })
+    }, [])
 
-
-    function addPhone () {
-        dispatch({type: 'ADD_PHONE', value: {price: phone.price, phoneId: phone.id}})
-        dispatch({type: 'ADD_CART_ITEM', value: phone})
+    function addToCart () {
+        if (cartInfo.length === 0) {
+            dispatch({type: 'CREATE_CART_ITEM', value: phone})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
+        }
+        if (cartInfo.length > 0) {
+            dispatch({type: 'ADD_CART_ITEM', value: phone})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
+        }
     }
 
     if (loader) {
@@ -51,11 +57,9 @@ export const ProductPage = () => {
                     <div className={'phonePrice'}>${phone.price}</div>
                 </div>
                 <div className={'buyBtnWrapper'}>
-                    <NavLink to={'/shoppingCart'}><button onClick={addPhone} className={'buyBtn'}>Buy now</button></NavLink>
+                    <NavLink to={'/shoppingCart'}><button onClick={addToCart} className={'buyBtn'}>Buy now</button></NavLink>
                 </div>
             </div>
         </div>
     );
 };
-
-// На нажатие кнопки юзаю редьюсер, по данным выше (юзПарамс и прочему) создаю элемент в корзине

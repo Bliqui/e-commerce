@@ -5,7 +5,7 @@ import {NavLink, useParams} from "react-router-dom";
 
 export const MainBody = () => {
 
-    const phones = useSelector(state => state.phones);
+    const phones = useSelector(state => state.product.phones);
 
     return (
         <div className={'mainBody'}>

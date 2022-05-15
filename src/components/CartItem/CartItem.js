@@ -2,46 +2,42 @@ import "./CartItem.scss"
 import {useDispatch} from "react-redux";
 import {useState} from "react";
 
-export const CartItem = ({price, phoneId, count, phoneImage, name}) => {
+export const CartItem = ({phone}) => {
     const dispatch = useDispatch();
     const [disabled, setDisable] = useState(false);
-    const [counter, setCounter] = useState(1);
 
     function addItem() {
         setDisable(true);
         return setTimeout(() => {
-            dispatch({type: 'ADD_PHONE', value: {price, phoneId}})
+            dispatch({type: 'ADD_CART_ITEM', value: phone})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
             setDisable(false)
         }, 500)
     };
 
     function removeItem() {
-        if (counter > 0) {
             setDisable(true)
             setTimeout(() => {
-                dispatch({type: 'REMOVE_PHONE', value: price})
-                setCounter(prevState => prevState - 1)
+                dispatch({type: 'REMOVE_CART_ITEM', value: phone})
+                dispatch({type: 'REMOVE_FROM_FINAL_PRICE', value: phone.price})
                 setDisable(false)
             }, 500)
-        } else {
-            alert('AoAo')
-        };
     };
 
     return (
         <div className={'sumPurchaseBody'}>
             <div className={'sumPurchaseWrapper'}>
                 <div className={'sumPurchaseImgWrapper'}>
-                    <img className={'sumPurchaseImg'} src={phoneImage} alt=""/>
+                    <img className={'sumPurchaseImg'} src={phone.phoneImage} alt=""/>
                 </div>
                 <div className={'sumPurchaseInfo'}>
-                    <div className={'sumPurchaseName'}>{name}</div>
+                    <div className={'sumPurchaseName'}>{phone.name}</div>
                     <button disabled={disabled} onClick={removeItem}>-1</button>
-                    <div className={'sumPurchaseCount'}>{count}</div>
+                    <div className={'sumPurchaseCount'}>{phone.count}</div>
                     <button disabled={disabled} onClick={addItem}>+1</button>
-                    <div className={'sumPurchasePrice'}>${price}</div>
+                    <div className={'sumPurchasePrice'}>${phone.price}</div>
                 </div>
             </div>
         </div>
-    );
+    )
 };

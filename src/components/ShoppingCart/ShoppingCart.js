@@ -5,8 +5,7 @@ import {EmptyCart} from "../EmptyCart/EmptyCart";
 
 export const ShoppingCart = () => {
 
-    const {finalPrice, cartItems} = useSelector(state => state);
-
+    const {finalPrice, cartItems} = useSelector(state => state.cart);
     if (cartItems.length === 0) {
         return (
             <EmptyCart/>
@@ -21,13 +20,7 @@ export const ShoppingCart = () => {
                         <button className={'buyBtn'}>Check out</button>
                     </div>
                     {cartItems.map((e) => {
-                        return <CartItem key={e.id}
-                                         price={e.price}
-                                         count={e.count}
-                                         phoneId={e.id}
-                                         phoneImage={e.phoneImage}
-                                         name={e.name}
-                        />
+                        return <CartItem key={e.id} phone={e}/>
                     })}
                 </div>
             </div>

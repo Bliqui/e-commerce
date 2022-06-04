@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# E-commerce
+Pet-project to learn redux, redux-persist. No APIs used.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Preview
+Avalible in desktop and phone (not finished) modes, you may try it here: [E-commerce](https://polite-vacherin-d88a2a.netlify.app/)
 
-## Available Scripts
+# Application view screenshots:
 
-In the project directory, you can run:
+# Desktop. Main Page:
+![image](https://user-images.githubusercontent.com/59931735/172028804-f7ad863f-725c-4109-b3f9-9b6d6b3b40ea.png)
 
-### `npm start`
+# Desktop. Product Page:
+![image](https://user-images.githubusercontent.com/59931735/172028814-a8524262-0094-4e9c-ba10-5c0a0d09609f.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Desktop. Empty Cart:
+![image](https://user-images.githubusercontent.com/59931735/172028825-ee20fbac-718e-494c-8ef2-74561656e5c4.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Desktop. Cart With Products:
+![image](https://user-images.githubusercontent.com/59931735/172028839-364d6a20-c682-4e29-86c7-3740db4099ca.png)
 
-### `npm test`
+# Phone. Main Page:
+![image](https://user-images.githubusercontent.com/59931735/172028848-3deefba3-6491-4dc5-aaaa-05d5fae591ac.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Phone. Product Page:
+![image](https://user-images.githubusercontent.com/59931735/172028853-e39f74d1-df07-4b79-85a2-b97b3500c5e1.png)
 
-### `npm run build`
+# Phone. Empty Cart:
+![image](https://user-images.githubusercontent.com/59931735/172028879-55b384c2-eb7d-4049-b651-9c84f3d52fb5.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Phone. Cart With Products: 
+![image](https://user-images.githubusercontent.com/59931735/172028861-b9510ac6-5de0-4ca4-9eb5-2112e54afb69.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -8,17 +8,40 @@
     border-bottom: 1px solid #1d1d1f;
     width: 45%;
     margin-top: 40px;
+
+    @media screen and (max-width: 480px)  {
+      @include flex(space-between, column, center);
+      width: 90%;
+    }
     & .sumPurchaseImg {
       height: 100px;
       width: 100px;
+
+      @media screen and (max-width: 480px) {
+        height: 100%;
+        width: 100%;
+      }
     }
     & .sumPurchaseInfo {
       @include flex(flex-end, row, center);
       font-family: "SF Pro Display", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 24px;
       font-weight: 600;
+
+      @media screen and (max-width: 480px)  {
+        width: 100%;
+        @include flex(space-between, row, center);
+      }
+
       & .sumPurchaseName {
         padding-right: 40px;
+      }
+
+      & .sumPurchaseProductInfoWrapper {
+
+      }
+      & .sumCountAndPriceWrapper {
+        @include flex(center, row, center);
       }
       & .sumPurchaseBtn {
         background-color: #1d1d1f;

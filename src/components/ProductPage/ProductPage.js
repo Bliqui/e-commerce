@@ -34,11 +34,11 @@ export const ProductPage = () => {
     function addToCart () {
         if (cartInfo.length === 0) {
             dispatch({type: 'CREATE_CART_ITEM', value: phone})
-            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: {price: phone.price}})
         }
         if (cartInfo.length > 0) {
             dispatch({type: 'ADD_CART_ITEM', value: phone})
-            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: {price: phone.price}})
         }
     }
 

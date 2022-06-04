@@ -10,7 +10,7 @@ export const CartItem = ({phone}) => {
         setDisable(true);
         return setTimeout(() => {
             dispatch({type: 'ADD_CART_ITEM', value: phone})
-            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone.price})
+            dispatch({type: 'ADD_TO_FINAL_PRICE', value: phone})
             setDisable(false)
         }, 500)
     };
@@ -19,7 +19,7 @@ export const CartItem = ({phone}) => {
             setDisable(true)
             setTimeout(() => {
                 dispatch({type: 'REMOVE_CART_ITEM', value: phone})
-                dispatch({type: 'REMOVE_FROM_FINAL_PRICE', value: phone.price})
+                dispatch({type: 'REMOVE_FROM_FINAL_PRICE', value: phone})
                 setDisable(false)
             }, 500)
     };
@@ -32,10 +32,14 @@ export const CartItem = ({phone}) => {
                 </div>
                 <div className={'sumPurchaseInfo'}>
                     <div className={'sumPurchaseName'}>{phone.name}</div>
-                    <button className={'sumPurchaseBtn'} disabled={disabled} onClick={removeItem}>-1</button>
-                    <div className={'sumPurchaseCount'}>{phone.count}</div>
-                    <button className={'sumPurchaseBtn'} disabled={disabled} onClick={addItem}>+1</button>
-                    <div className={'sumPurchasePrice'}>${phone.price}</div>
+                    <div className={'sumPurchaseProductInfoWrapper'}>
+                       <div className={'sumCountAndPriceWrapper'}>
+                            <button className={'sumPurchaseBtn'} disabled={disabled} onClick={removeItem}>-</button>
+                            <div className={'sumPurchaseCount'}>{phone.count}</div>
+                            <button className={'sumPurchaseBtn'} disabled={disabled} onClick={addItem}>+</button>
+                       </div>
+                        <div className={'sumPurchasePrice'}>${phone.price}</div>
+                    </div>
                 </div>
             </div>
         </div>

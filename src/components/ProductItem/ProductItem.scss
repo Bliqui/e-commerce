@@ -5,16 +5,21 @@
         height: 40vh;
         width: 17vw;
         border-radius: 7px;
+        min-width: 200px;
 
         background-color: rgba(11.37, 11.37, 12.16, 0.85);
 
         @include flex(center, column, center);
         color: white;
 
+        @media screen and (max-width: 1000px) {
+            min-width: 290px;
+            height: 100%;
+        }
         & .phoneImage {
             margin: 0 auto;
             min-height: 75%;
-            width: 250px;
+            width: 100%;
             object-fit: contain;
         }
         & .productName {
@@ -29,6 +34,10 @@
             font-size: 20px;
             @include flex(center, center, center);
             height: 100%;
+
+            @media screen and (max-width: 900px) {
+                padding-bottom: 15px;
+            }
         }
     }
 }

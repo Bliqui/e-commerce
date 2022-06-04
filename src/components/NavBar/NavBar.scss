@@ -18,7 +18,17 @@
     & .navWrapper {
         @include flex(space-between, row, flex-start);
         margin: 0 auto;
-        width: 1200px;
+        width: 100%;
+        max-width: 1200px;
+        @media screen and (max-width: 480px) {
+            width: 90%;
+            @include flex(space-between, row, center);
+        }
+
+        @media screen and (max-width: 1000px) {
+            width: 90%;
+            @include flex(space-between, row, center);
+        }
     }
     & .logo {
         @include flex(center, row, center);

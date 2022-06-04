@@ -15,12 +15,27 @@
     margin: 0 auto;
     @include flex(space-between, row, center);
 
+    @media screen and (max-width: 300px) {
+      @include flex(center, row, center);
+    }
     & .footerTextN {
       color: $footerCol;
+
+      @media screen and (max-width: 300px) {
+        display: none;
+      }
     }
 
     & .footerTextC {
       color: $footerCol;
+
+      @media screen and (max-width: 550px) {
+        display: none;
+      }
+
+      @media screen and (max-width: 300px) {
+        display: none;
+      }
     }
 
     & .footerTextP {

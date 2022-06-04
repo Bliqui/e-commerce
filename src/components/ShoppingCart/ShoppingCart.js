@@ -2,6 +2,7 @@ import './ShoppingCart.scss'
 import {useSelector} from "react-redux";
 import {CartItem} from "../CartItem/CartItem";
 import {EmptyCart} from "../EmptyCart/EmptyCart";
+import {ScrollToTop} from "../ScrollToTop/ScrollToTop";
 
 export const ShoppingCart = () => {
 
@@ -23,6 +24,7 @@ export const ShoppingCart = () => {
                         return <CartItem key={e.id} phone={e}/>
                     })}
                 </div>
+                <ScrollToTop />
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ import "./MainBody.scss";
 import {ProductItem} from "../ProductItem/ProductItem";
 import {useSelector} from "react-redux";
 import {NavLink, useParams} from "react-router-dom";
+import {ScrollToTop} from "../ScrollToTop/ScrollToTop";
 
 export const MainBody = () => {
 
@@ -19,6 +20,7 @@ export const MainBody = () => {
                             />
                         </NavLink>
                     })}
+                    <ScrollToTop />
                 </div>
             </div>
         </div>

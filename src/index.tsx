@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
 import App from './App';
+// @ts-ignore
+import {store, persistor} from "./redux/store.ts";
 import {Provider} from "react-redux";
-import {store} from "./redux/store";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {MainBody} from "./components/MainBody/MainBody";
 import {ProductPage} from "./components/ProductPage/ProductPage";
 import {ShoppingCart} from "./components/ShoppingCart/ShoppingCart";
 import {PersistGate} from "redux-persist/integration/react";
-import {persistor} from "./redux/store";
 import {Loader} from "./components/Loader/Loader";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

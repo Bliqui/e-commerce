@@ -1,8 +1,22 @@
+// @ts-ignore
 import iphone12mini from '../assets/images/iPhone-12-mini.png';
+// @ts-ignore
 import iphoneSe from '../assets/images/iPhone-se.png';
+// @ts-ignore
 import iphone13pro from '../assets/images/iPhone-13-pro.png';
 
-const initialState = {
+interface State {
+    phones: {
+        id: string
+        name: string
+        price: number
+        phoneImage: string
+        count: number
+        description: string
+    }[];
+};
+
+const initialState: State = {
   phones: [
       {
           id: '1',
@@ -55,13 +69,6 @@ const initialState = {
   ]
 };
 
-const GET_PHONES = 'GET_PHONES';
-
 export const ProductItemReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case GET_PHONES:
-            return state
-        default:
-            return state;
-    }
-};
+    return state;
+}

@@ -1,8 +1,10 @@
 import {combineReducers, createStore} from "redux";
 import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
-import {ProductItemReducer} from "./ProductItemReducer";
-import {CartItemReducer} from "./CartItemReducer";
+import storage from 'redux-persist/lib/storage'
+// @ts-ignore
+import {ProductItemReducer} from "./ProductItemReducer.ts";
+// @ts-ignore
+import {CartItemReducer} from "./CartItemReducer.ts";
 
 const rootReducerMain = combineReducers({
     product: ProductItemReducer,
@@ -16,6 +18,6 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducerMain)
 
-export const store = createStore(persistedReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = createStore(persistedReducer);
 export let persistor = persistStore(store);
 

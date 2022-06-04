@@ -4,8 +4,6 @@ Pet-project to learn redux, redux-persist. No APIs used.
 # Preview
 Avalible in desktop and phone (not finished) modes, you may try it here: [E-commerce](https://polite-vacherin-d88a2a.netlify.app/)
 
-# Application view screenshots:
-
 # Desktop. Main Page:
 ![image](https://user-images.githubusercontent.com/59931735/172028804-f7ad863f-725c-4109-b3f9-9b6d6b3b40ea.png)
 
